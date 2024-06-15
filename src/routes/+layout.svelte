@@ -7,7 +7,7 @@
 
 <div>
   <nav>
-    <ul>
+    <ul class="flex gap-2">
       <li><a href="/" class:active={pathname === '/'}>Top</a></li>
       <li><a href="/about" class:active={pathname === '/about'}>About</a></li>
       <li><a href="/user" class:active={pathname === '/user'}>User List</a></li>

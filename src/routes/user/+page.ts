@@ -5,10 +5,11 @@ type User = {
   name: string
 }
 
-export const load = (async ({ fetch }) => {
+export const load: PageLoad = async ({ fetch }) => {
   const response = await fetch('https://jsonplaceholder.typicode.com/users')
-  const users: User[] = await response.json()
-  return {
-    users
+  if (!response.ok) {
+    throw new Error('Failed to fetch users')
   }
-}) satisfies PageLoad
+  const users: User[] = await response.json()
+  return { users }
+}
