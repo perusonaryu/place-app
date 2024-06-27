@@ -28,7 +28,7 @@
 
 <svelte:head>
   <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  　　　　　　　<meta name="description" content="Svelte demo app" />
 </svelte:head>
 <div>
   <div>{dayjs(data.updatedAt).format('YYYY-MM-DD')}</div>
