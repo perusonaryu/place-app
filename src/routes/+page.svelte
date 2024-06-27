@@ -32,6 +32,7 @@
               <img class="w-full h-full object-cover" src={content.eyecatch?.url} width="1" height="1" alt="" />
             </div>
             <div class="col-span-3 break-words h-full line-clamp-6 leading-[1.55rem]">
+              <!-- eslint-disable-next-line svelte/no-at-html-tags -->
               {@html getContentByText(content.content)}
             </div>
           </div>

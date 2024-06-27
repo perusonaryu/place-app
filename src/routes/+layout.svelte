@@ -1,8 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores'
   import '../style/app.css'
-
-  $: pathname = $page.url.pathname
 </script>
 
 <div>

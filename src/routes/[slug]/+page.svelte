@@ -34,6 +34,7 @@
   <div>{dayjs(data.updatedAt).format('YYYY-MM-DD')}</div>
   <h1 class="text-3xl font-bold mb-6">{data.title}</h1>
   <div class="content">
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html data.content}
   </div>
 </div>
