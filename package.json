@@ -49,7 +49,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": [
+    "src/**/*.{js,ts,svelte}": [
       "npm run lint-fix"
     ]
   }
