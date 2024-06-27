@@ -11,7 +11,7 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "lint-fix": "eslint --fix './src/**/*.{js,ts}' && prettier --write './src/**/*.{js,ts}'"
+    "lint-fix": "eslint --fix './src/**/*.{js,ts,svelte}' && prettier --write './src/**/*.{js,ts,svelte}'"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
