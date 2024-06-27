@@ -1,25 +1,17 @@
 <script lang="ts">
   import { page } from '$app/stores'
-  import '../app.css'
+  import '../style/app.css'
 
   $: pathname = $page.url.pathname
 </script>
 
 <div>
-  <nav>
-    <ul class="flex gap-2">
-      <li><a href="/" class:active={pathname === '/'}>Top</a></li>
-      <li><a href="/about" class:active={pathname === '/about'}>About</a></li>
-      <li><a href="/user" class:active={pathname === '/user'}>User List</a></li>
-    </ul>
-  </nav>
-  <slot></slot>
+  <header>
+    <h1 class="text-center text-[#AFDEEC] text-4xl mb-[100px] p-5">
+      <a href="/">RyuBlog</a>
+    </h1>
+  </header>
+  <div class="max-w-[960px] m-auto">
+    <slot></slot>
+  </div>
 </div>
-
-
-<style>
-  .active {
-    color: red;
-    font-weight: 900;
-  }
-</style>

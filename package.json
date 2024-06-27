@@ -9,7 +9,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "lint-fix": "eslint --fix './src/**/*.{js,ts}' && prettier --write './src/**/*.{js,ts}'"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
@@ -21,6 +23,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.36.0",
     "globals": "^15.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.7",
     "postcss": "^8.4.38",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
@@ -34,6 +38,19 @@
   },
   "type": "module",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "dayjs": "^1.11.11",
+    "highlight.js": "^11.9.0",
     "microcms-js-sdk": "^3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "npm run lint-fix"
+    ]
   }
 }
