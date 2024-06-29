@@ -19,8 +19,8 @@
   <title>{data.title}</title>
   <meta name="description" content={headDescription} />
 </svelte:head>
-<div class="bg-white rounded-lg px-14 py-8">
-  <div class="flex gap-x-3 text-sm text-black/70 mb-2">
+<div class="bg-white rounded-lg p-7 sm:px-14">
+  <div class="flex flex-col sm:flex-row gap-x-3 text-sm text-black/70 mb-2">
     <span>投稿日：{dayjs(data.createdAt).format('YYYY年MM月DD日')}</span>
     <span>最終更新日：{dayjs(data.updatedAt).format('YYYY年MM月DD日')}</span>
   </div>
