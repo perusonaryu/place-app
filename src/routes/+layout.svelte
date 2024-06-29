@@ -3,7 +3,7 @@
 </script>
 
 <div class="min-h-screen relative pb-14">
-  <header class="mb-16">
+  <header class="mb-5 sm:mb-16">
     <h1 class="text-center text-[#AFDEEC] text-4xl p-5">
       <a href="/">RyuBlog</a>
     </h1>
