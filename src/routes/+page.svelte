@@ -2,7 +2,7 @@
   import type { PageData } from './$types'
   import dayjs from 'dayjs'
   export let data: PageData
-  import { load } from 'Cheerio'
+  import { load } from 'cheerio'
 
   function getContentByText(content: string): string {
     const $ = load(content)

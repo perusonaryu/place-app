@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import dayjs from 'dayjs'
-  import { load } from 'Cheerio'
+  import { load } from 'cheerio'
   import hljs from 'highlight.js'
 
   import '../../style/blog/detail.css'
