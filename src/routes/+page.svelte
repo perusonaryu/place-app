@@ -9,7 +9,7 @@
   <title>Ryu Blog</title>
   <meta name="description" content="記事一覧です" />
 </svelte:head>
-<div class="max-w-[960px] m-auto px-3 sm:px-0">
+<div class="w-full m-auto px-3 sm:px-0">
   <ul class="grid grid-cols-1 gap-y-9">
     {#each data.contents as content}
       <li class="bg-white rounded-lg p-5 hover:cursor-pointer">
