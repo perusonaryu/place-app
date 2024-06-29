@@ -2,35 +2,24 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import dayjs from 'dayjs'
-  import { load } from 'cheerio'
-  import hljs from 'highlight.js'
+  import { highlightCode, getHeadDescription } from '$lib/html'
 
   import '../../style/blog/detail.css'
-  import 'highlight.js/styles/default.css' // Highlight.jsのスタイルをインポート
 
   export let data: PageData
-
-  function highlightCode() {
-    const $ = load(data.content)
-    $('code').each((_, elm) => {
-      const result = hljs.highlightAuto($(elm).text())
-      $(elm).html(result.value)
-      $(elm).addClass('hljs')
-    })
-
-    return (data.content = $.html())
-  }
+  let headDescription = ''
 
   onMount(() => {
-    highlightCode()
+    data.content = highlightCode(data.content)
+    headDescription = getHeadDescription(data.content)
   })
 </script>
 
 <svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>{data.title}</title>
+  <meta name="description" content={headDescription} />
 </svelte:head>
-<div>
+<div class="bg-white rounded-lg px-14 py-8">
   <div class="flex gap-x-3 text-sm text-black/70 mb-2">
     <span>投稿日：{dayjs(data.createdAt).format('YYYY年MM月DD日')}</span>
     <span>最終更新日：{dayjs(data.updatedAt).format('YYYY年MM月DD日')}</span>

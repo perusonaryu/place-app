@@ -2,38 +2,32 @@
   import type { PageData } from './$types'
   import dayjs from 'dayjs'
   export let data: PageData
-  import { load } from 'cheerio'
-
-  function getContentByText(content: string): string {
-    const $ = load(content)
-    let text = ''
-    $('p').each((_, elm) => {
-      text += `${$(elm).text()}`
-    })
-    return text
-  }
+  import { getHeadDescription } from '$lib/html'
 </script>
 
 <svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>Ryu Blog</title>
+  <meta name="description" content="記事一覧です" />
 </svelte:head>
 <div class="max-w-[960px] m-auto">
   <ul class="grid grid-cols-1 gap-y-9">
     {#each data.contents as content}
-      <li>
-        <div class="text-xs">{dayjs(content.updatedAt).format('YYYY-MM-DD')}</div>
+      <li class="bg-white rounded-lg p-3 hover:cursor-pointer">
+        <div class="flex gap-x-3 text-sm text-black/70 mb-2">
+          <span>投稿日：{dayjs(content.createdAt).format('YYYY年MM月DD日')}</span>
+          <span>最終更新日：{dayjs(content.updatedAt).format('YYYY年MM月DD日')}</span>
+        </div>
         <a href={content.id}>
           <h3 class="text-2xl mb-2">
             {content.title}
           </h3>
           <div class="grid grid-cols-4 gap-x-2">
             <div class="w-full h-[150px]">
-              <img class="w-full h-full object-cover" src={content.eyecatch?.url} width="1" height="1" alt="" />
+              <img class="w-full h-full object-contain" src={content.eyecatch?.url} width="1" height="1" alt="" />
             </div>
             <div class="col-span-3 break-words h-full line-clamp-6 leading-[1.55rem]">
               <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-              {@html getContentByText(content.content)}
+              {@html getHeadDescription(content.content)}
             </div>
           </div>
         </a>
