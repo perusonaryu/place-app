@@ -2,7 +2,7 @@
   import '../style/app.css'
 </script>
 
-<div>
+<div class="min-h-screen relative pb-14">
   <header class="mb-16">
     <h1 class="text-center text-[#AFDEEC] text-4xl p-5">
       <a href="/">RyuBlog</a>
