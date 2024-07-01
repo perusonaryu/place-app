@@ -16,6 +16,12 @@ export type Blog = {
   title: string
   content: string
   eyecatch?: MicroCMSImage
+  tags: Tag[]
+}
+
+type Tag = {
+  id: string
+  name: string
 }
 
 export type BlogResponse = {
