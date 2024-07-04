@@ -18,9 +18,7 @@
       <div class="flex gap-x-3 text-sm text-black/70 mb-2">
         {#each blog.tags as tag}
           <a href={'/tag/' + tag.id}>
-            <div
-              class="bg-[#AFDEEC]/50 hover:bg-[#AFDEEC] text-black/50 hover:text-white text-sm font-bold py-1 px-2 rounded-md cursor-pointer"
-            >
+            <div class=" hover:bg-[#AFDEEC]/20 text-sm font-bold py-1 px-2 border rounded-md cursor-pointer">
               {tag.name}
             </div>
           </a>
