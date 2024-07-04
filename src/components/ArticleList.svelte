@@ -26,7 +26,7 @@
       </div>
     {/if}
   </div>
-  <a href={blog.id} class="group">
+  <a href={'/' + blog.id} class="group">
     <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-x-2">
       <div class="w-full h-[120px]">
         <img class="w-full h-full object-contain" src={blog.eyecatch?.url} width="1" height="1" alt="" />
