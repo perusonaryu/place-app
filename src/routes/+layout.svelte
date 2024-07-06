@@ -8,7 +8,9 @@
       <a href="/">RyuBlog</a>
     </h1>
   </header>
-  <div class="sm:max-w-[550px] md:max-w-[1120px] box-border mx-3 sm:mx-auto mb-10">
+  <div
+    class="flex justify-center w-full md:max-w-[900px] lg:max-w-[1000px] box-border mx-auto mb-10 px-4 md:px-8 lg:px-0"
+  >
     <slot></slot>
   </div>
   <footer class="bg-[#393C3C] p-5 absolute bottom-0 w-full">
