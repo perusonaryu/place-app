@@ -1,17 +1,20 @@
 <script lang="ts">
   import type { PageData } from './$types'
   import dayjs from 'dayjs'
-  import { highlightCode, getHeadDescription } from '$lib/html'
+  import { highlightCode, getHeadDescription, getSubHeadingIDs } from '$lib/html'
   import Profile from '../../components/Profile.svelte'
 
   import '../../style/blog/detail.css'
 
   export let data: PageData
   let headDescription = ''
+  let subHeadingIDs: Map<string, string>
 
   function preProcess() {
     data.content = highlightCode(data.content)
     headDescription = getHeadDescription(data.content)
+    subHeadingIDs = getSubHeadingIDs(data.content)
+
     return
   }
 </script>
@@ -21,7 +24,7 @@
   <meta name="description" content={headDescription} />
 </svelte:head>
 
-{#await preProcess then}
+{#await preProcess() then}
   <div class="w-full flex justify-between">
     <div class="w-[70%] bg-white rounded-md p-4 sm:p-7 md:px-14">
       <div class="flex flex-col sm:flex-row gap-x-3 text-sm text-black/70 mb-2">
@@ -34,8 +37,18 @@
         {@html data.content}
       </div>
     </div>
-    <div class="w-[25%]">
+    <div class="flex flex-col w-[25%] gap-y-4">
       <Profile />
+      <div class="bg-white rounded-md p-5">
+        <div class="font-bold">目次</div>
+        <ul class="text-sm">
+          {#each Array.from(subHeadingIDs.entries()) as [id, text]}
+            <li class="my-1">
+              <a class="block w-full" href={'#' + id}>{text}</a>
+            </li>
+          {/each}
+        </ul>
+      </div>
     </div>
   </div>
 {/await}

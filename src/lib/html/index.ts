@@ -21,3 +21,15 @@ export function getHeadDescription(stringHtml: string) {
   const $ = load(stringHtml)
   return $($('p')[0]).text()
 }
+
+export function getSubHeadingIDs(stringHtml: string) {
+  const result: Map<string, string> = new Map()
+  if (!stringHtml) return result
+  const $ = load(stringHtml)
+  $('h2').each((i, elm) => {
+    const id = $(elm).attr('id') ?? ''
+    const text = $(elm).text()
+    result.set(id, text)
+  })
+  return result
+}
