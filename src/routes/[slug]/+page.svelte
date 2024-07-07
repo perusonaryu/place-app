@@ -26,7 +26,7 @@
 
 {#await preProcess() then}
   <div class="w-full flex justify-between">
-    <div class="w-[70%] bg-white rounded-md p-4 sm:p-7 md:px-14">
+    <div class="w-full lg:w-[70%] bg-white rounded-md p-4 sm:p-7 md:px-14">
       <div class="flex flex-col sm:flex-row gap-x-3 text-sm text-black/70 mb-2">
         <span>投稿日：{dayjs(data.createdAt).format('YYYY年MM月DD日')}</span>
         <span>最終更新日：{dayjs(data.updatedAt).format('YYYY年MM月DD日')}</span>
@@ -37,7 +37,7 @@
         {@html data.content}
       </div>
     </div>
-    <div class="flex flex-col w-[25%] gap-y-4">
+    <div class="hidden lg:flex lg:flex-col lg:w-[25%] gap-y-4">
       <Profile />
       <div class="bg-white rounded-md p-5">
         <div class="font-bold">目次</div>
