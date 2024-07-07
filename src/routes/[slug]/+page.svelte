@@ -39,11 +39,11 @@
     </div>
     <div class="hidden lg:flex lg:flex-col lg:w-[25%] gap-y-4">
       <Profile />
-      <div class="bg-white rounded-md p-5">
+      <div class="bg-white rounded-md p-5 sticky top-4">
         <div class="font-bold">目次</div>
         <ul class="text-sm">
           {#each Array.from(subHeadingIDs.entries()) as [id, text]}
-            <li class="my-1">
+            <li class="text-black/70 hover:text-black my-1">
               <a class="block w-full" href={'#' + id}>{text}</a>
             </li>
           {/each}
