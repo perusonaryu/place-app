@@ -20,6 +20,6 @@
     <slot></slot>
   </div>
   <footer class="bg-[#393C3C] p-5 absolute bottom-0 w-full">
-    <p class="text-xs text-white text-center">&copy; 2024 RyuBlog Inc.</p>
+    <p class="text-xs text-white text-center">&copy; 2024 <span class="font-title">RyuBlog</span> Inc.</p>
   </footer>
 </div>
