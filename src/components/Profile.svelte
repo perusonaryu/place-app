@@ -4,7 +4,7 @@
       <div class="w-[60px] h-[60px]">
         <img class="w-full" src="/profile-icon.png" alt="プロフィールアイコン" width="1" height="1" />
       </div>
-      <h3 class="ml-3 font-bold">Ryu</h3>
+      <h3 class="ml-3 font-bold font-title">Ryu</h3>
     </div>
 
     <div class="p-2 mr-4 rounded-md hover:bg-black/10">
